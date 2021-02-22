@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 class StateVM(app: Application) : BaseApptentiveVM<StateRepository, StateInteractor>(app) {
     val stateListLiveData = MutableLiveData<List<State>>()
     val openStateListScreen = SingleLiveEvent<Nothing>()
+    val openStateDetailScreen = SingleLiveEvent<State>()
 
     init {
         repository = StateRepository()
@@ -43,5 +44,9 @@ class StateVM(app: Application) : BaseApptentiveVM<StateRepository, StateInterac
     fun appLaunched() {
         /** open state list page */
         openStateListScreen.postValue(null)
+    }
+
+    fun onStateItemClick(state: State) {
+        openStateDetailScreen.postValue(state)
     }
 }
