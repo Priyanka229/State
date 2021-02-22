@@ -3,9 +3,14 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'kotlin-allopen'
 }
 
 apply from: "../apptentive_versions.gradle"
+
+allOpen {
+    annotation('apptentive.com.states.utilities.OpenForTesting')
+}
 
 android {
     compileSdkVersion apptentiveCompileSdkVersion
@@ -68,4 +73,21 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:${apptentiveRetrofitVersion}"
     api "com.squareup.retrofit2:converter-gson:${apptentiveRetrofitVersion}"
     implementation "com.squareup.okhttp3:logging-interceptor:${apptentiveRetrofitIntercepterVersion}"
+
+    /**
+     * testing
+     */
+    testImplementation "junit:junit:$apptentiveJUnitVersion"
+    testImplementation "androidx.arch.core:core-testing:$apptentiveCoreTestingVersion"
+    testImplementation "org.mockito:mockito-core:$apptentiveMockitoVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$apptentiveCoroutineTestVersion"
+
+    /** android testing */
+    androidTestImplementation "androidx.test.ext:junit:$apptentiveAndroidJUnitVersion"
+    androidTestImplementation "androidx.test:runner:$apptentiveAndroidJUnitVersion"
+    androidTestImplementation "androidx.test:core:$apptentiveAndroidJUnitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$apptentiveExpressionVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$apptentiveExpressionVersion"
+    implementation "androidx.test.espresso:espresso-idling-resource:$apptentiveExpressionVersion"
+    debugImplementation "androidx.fragment:fragment-testing:$apptentiveDebugFragment_version"
 }

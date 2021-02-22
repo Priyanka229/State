@@ -38,8 +38,8 @@ class StateDetailFragment : BaseApptentiveFragment() {
         binding.apply {
             /** set state name */
             stateNameTv.apply {
-                val stateName = "${state.name} - ${state.abbreviation}"
-                text = if (state.abbreviation.isNullOrBlank()) state.name else stateName
+                val stateName = "${state.name}"
+                text = stateName
                 visibility = if (state.name.isNullOrBlank()) View.GONE else View.VISIBLE
             }
 

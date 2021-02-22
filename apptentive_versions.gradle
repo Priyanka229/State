@@ -21,4 +21,11 @@ ext {
     apptentiveRetrofitVersion = '2.9.0'
     apptentiveRetrofitIntercepterVersion = '4.9.0'
 
+    apptentiveJUnitVersion = '4.13.2'
+    apptentiveMockitoVersion = '3.7.7'
+    apptentiveCoreTestingVersion = '2.1.0'
+    apptentiveCoroutineTestVersion = '1.3.9'
+    apptentiveAndroidJUnitVersion = '1.1.2'
+    apptentiveExpressionVersion = '3.3.0'
+    apptentiveDebugFragment_version = '1.3.0'
 }
