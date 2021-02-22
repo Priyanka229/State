@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import apptentive.com.states.beans.State
 import apptentive.com.states.databinding.ActivityMainBinding
+import apptentive.com.states.ui.StateDetailFragment
 import apptentive.com.states.ui.StateListFragment
 import apptentive.com.states.ui.StateVM
 
@@ -47,11 +49,27 @@ class MainActivity : AppCompatActivity() {
         viewModel.openStateListScreen.observe(this) {
             loadStateListFragment()
         }
+
+        /** open state detail */
+        viewModel.openStateDetailScreen.observe(this) {
+            openStateDetailFragment(it)
+        }
     }
 
     private fun loadStateListFragment() {
         supportFragmentManager.beginTransaction()
             .replace(binding.container.id, StateListFragment.newInstance())
+            .commit()
+    }
+
+    private fun openStateDetailFragment(state: State) {
+        supportFragmentManager.beginTransaction()
+            .add(binding.container.id, StateDetailFragment.newInstance().apply {
+                arguments = Bundle().apply {
+                    putParcelable(StateDetailFragment.ARGUMENT_STATE, state)
+                }
+            })
+            .addToBackStack(null)
             .commit()
     }
 }

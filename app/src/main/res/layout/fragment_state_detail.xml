@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.StateListFragment"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/state_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="state name"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/capital_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/state_name_tv"
+            tools:text="capital name"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/largest_city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/capital_tv"
+            tools:text="largest city name"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/established_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/largest_city_tv"
+            tools:text="est date"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/population_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/established_date_tv"
+            tools:text="population"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/total_area_km2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/population_tv"
+            tools:text="total area"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/land_area_km2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_area_km2_tv"
+            tools:text="land area"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/water_area_km2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/land_area_km2_tv"
+            tools:text="water area"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/number_of_reps_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="12sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/water_area_km2_tv"
+            tools:text="reps no."
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
