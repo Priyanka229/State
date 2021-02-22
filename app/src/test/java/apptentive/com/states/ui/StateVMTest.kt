@@ -44,7 +44,7 @@ class StateVMTest {
         // do something if required
     }
 
-
+    /** test the serve response in case of success */
     @Test
     fun `test the server response in case of success`() {
         testCoroutineRule.runBlockingTest {
@@ -64,6 +64,7 @@ class StateVMTest {
         }
     }
 
+    /** test the serve response in case of failure */
     @Test
     fun `test the server response in case of failure`() {
         testCoroutineRule.runBlockingTest {
