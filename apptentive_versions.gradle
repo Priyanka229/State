@@ -1,0 +1,24 @@
+ext {
+    apptentiveVersionCode = 1
+    apptentiveVersionName = '1.0.0'
+    apptentiveMinSdkVersion = 21
+    apptentiveTargetSdkVersion = 30
+    apptentiveCompileSdkVersion = 30
+    apptentiveBuildToolsVersion = '30.0.0'
+
+    apptentiveKTXVersion = '1.3.2'
+
+    apptentiveAppCompatVersion = '1.2.0'
+    apptentiveMaterialVersion = '1.3.0'
+    apptentiveConstraintlayoutVersion = '2.0.4'
+
+    apptentiveCoroutineCoreVersion = '1.3.8'
+    capptentiveCoroutineAndroidVersion = '1.4.1'
+
+    apptentiveLifecycleExtensionsVersion = '2.2.0'
+    apptentiveViewModelVersion = '2.3.0'
+
+    apptentiveRetrofitVersion = '2.9.0'
+    apptentiveRetrofitIntercepterVersion = '4.9.0'
+
+}
