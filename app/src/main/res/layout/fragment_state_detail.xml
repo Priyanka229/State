@@ -112,5 +112,12 @@
             tools:text="reps no."
             tools:visibility="visible"/>
 
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/like_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number_of_reps_tv"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -43,59 +43,65 @@ class StateDetailFragment : BaseApptentiveFragment() {
                 visibility = if (state.name.isNullOrBlank()) View.GONE else View.VISIBLE
             }
 
-            /** set capital name */
-            val capitalName = "Capital :  ${state.capital}"
-            capitalTv.apply {
-                text = capitalName
-                visibility = if (state.capital.isNullOrBlank()) View.GONE else View.VISIBLE
-            }
-
-            /** set largest city name */
-            val largestCityName = "Largest City :  ${state.largest_city}"
-            largestCityTv.apply {
-                text = largestCityName
-                visibility = if (state.largest_city.isNullOrBlank()) View.GONE else View.VISIBLE
-            }
-
-            /** set est date */
-            val establishedDate = "Est Date :  ${ApptentiveUtility.getDateStr(state.established_date)}"
-            establishedDateTv.apply {
-                text = establishedDate
-                visibility = if (state.established_date.isNullOrBlank()) View.GONE else View.VISIBLE
-            }
-
-            /** set population */
-            val population = "Population :  ${state.population}"
-            populationTv.apply {
-                text = population
-                visibility = if (state.population == null) View.GONE else View.VISIBLE
-            }
-
-
-            /** set area */
-            val totalAreaKm2 = "Total Area :  ${state.total_area_km2}"
-            val landAreaKm2 = "Land Area :  ${state.land_area_km2}"
-            val waterAreaKm2 = "Water Area :  ${state.water_area_km2}"
-
-            totalAreaKm2Tv.apply {
-                text = totalAreaKm2
-                visibility = if (state.total_area_km2 == null) View.GONE else View.VISIBLE
-            }
-            landAreaKm2Tv.apply {
-                text = landAreaKm2
-                visibility = if (state.land_area_km2 == null) View.GONE else View.VISIBLE
-            }
-            waterAreaKm2Tv.apply {
-                text = waterAreaKm2
-                visibility = if (state.water_area_km2 == null) View.GONE else View.VISIBLE
-            }
-
-            /** set representatives no. */
-            val numberOfReps = "Representatives no. :  ${state.number_of_reps}"
-            numberOfRepsTv.apply {
-                text = numberOfReps
-                visibility = if (state.number_of_reps == null) View.GONE else View.VISIBLE
-            }
+//            /** set capital name */
+//            val capitalName = "Capital :  ${state.capital}"
+//            capitalTv.apply {
+//                text = capitalName
+//                visibility = if (state.capital.isNullOrBlank()) View.GONE else View.VISIBLE
+//            }
+//
+//            /** set largest city name */
+//            val largestCityName = "Largest City :  ${state.largest_city}"
+//            largestCityTv.apply {
+//                text = largestCityName
+//                visibility = if (state.largest_city.isNullOrBlank()) View.GONE else View.VISIBLE
+//            }
+//
+//            /** set est date */
+//            val establishedDate = "Est Date :  ${ApptentiveUtility.getDateStr(state.established_date)}"
+//            establishedDateTv.apply {
+//                text = establishedDate
+//                visibility = if (state.established_date.isNullOrBlank()) View.GONE else View.VISIBLE
+//            }
+//
+//            /** set population */
+//            val population = "Population :  ${state.population}"
+//            populationTv.apply {
+//                text = population
+//                visibility = if (state.population == null) View.GONE else View.VISIBLE
+//            }
+//
+//
+//            /** set area */
+//            val totalAreaKm2 = "Total Area :  ${state.total_area_km2}"
+//            val landAreaKm2 = "Land Area :  ${state.land_area_km2}"
+//            val waterAreaKm2 = "Water Area :  ${state.water_area_km2}"
+//
+//            totalAreaKm2Tv.apply {
+//                text = totalAreaKm2
+//                visibility = if (state.total_area_km2 == null) View.GONE else View.VISIBLE
+//            }
+//            landAreaKm2Tv.apply {
+//                text = landAreaKm2
+//                visibility = if (state.land_area_km2 == null) View.GONE else View.VISIBLE
+//            }
+//            waterAreaKm2Tv.apply {
+//                text = waterAreaKm2
+//                visibility = if (state.water_area_km2 == null) View.GONE else View.VISIBLE
+//            }
+//
+//            /** set representatives no. */
+//            val numberOfReps = "Representatives no. :  ${state.number_of_reps}"
+//            numberOfRepsTv.apply {
+//                text = numberOfReps
+//                visibility = if (state.number_of_reps == null) View.GONE else View.VISIBLE
+//            }
+//
+//            /** fav button */
+//            likeButton.isChecked = state.isFav
+//            likeButton.setOnCheckedChangeListener { compoundButton, b ->
+//                state.isFav = b
+//            }
         }
     }
 }

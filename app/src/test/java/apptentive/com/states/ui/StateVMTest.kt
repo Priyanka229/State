@@ -52,15 +52,17 @@ class StateVMTest {
                 .`when`(repository)
                 .getStates()
 
-            val output = repository.getStates().data
-            stateListLiveDataObserver.onChanged(output)
-
             val applicationMock = ApptentiveApp()
             val viewModel = StateVM(applicationMock)
             viewModel.stateListLiveData.observeForever(stateListLiveDataObserver)
-            verify(repository, times(1)).getStates()
-            verify(stateListLiveDataObserver).onChanged(emptyList())
+
+            val output = repository.getStates().data
+            viewModel.stateListLiveData.postValue(output)
+
             viewModel.stateListLiveData.removeObserver(stateListLiveDataObserver)
+
+            verify(repository).getStates()
+            verify(stateListLiveDataObserver).onChanged(emptyList())
         }
     }
 
@@ -72,15 +74,17 @@ class StateVMTest {
                 .`when`(repository)
                 .getStates()
 
-            val output = repository.getStates().error?.msg
-            msgLiveEventObserver.onChanged(output)
-
             val applicationMock = ApptentiveApp()
             val viewModel = StateVM(applicationMock)
             viewModel.showMsgLiveEvent.observeForever(msgLiveEventObserver)
+
+            val output = repository.getStates().error?.msg
+            viewModel.showMsgLiveEvent.postValue(output)
+
+            viewModel.showMsgLiveEvent.removeObserver(msgLiveEventObserver)
+
             verify(repository).getStates()
             verify(msgLiveEventObserver).onChanged("something went wrong")
-            viewModel.showMsgLiveEvent.removeObserver(msgLiveEventObserver)
         }
     }
 

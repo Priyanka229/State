@@ -45,6 +45,10 @@ class StateListFragment : BaseApptentiveFragment() {
             }
         }
 
+        binding.filterButton.setOnCheckedChangeListener { compoundButton, b ->
+            viewModel.filterStateChanged(b)
+        }
+
         /** view model */
         viewModel = ViewModelProvider(activity!!).get(StateVM::class.java)
 
